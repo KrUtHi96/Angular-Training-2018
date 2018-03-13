@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
+		</script>
+	</head>
+	
+	<body>
+	
+	<div ng-app = ""> <!--This div is owner of application-->
+		<p> Type Something in input box: </p>
+		<p> Name : <input type = "text" ng-model = "name"/> </p><!-- view to model-->
+		<p ng-bind = "name"> </p><!--Model to View-->
+	</div>
+	
+	</body>
+</html>
