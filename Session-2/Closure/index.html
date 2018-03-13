@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html kang = "en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Click Tracker</title>
+		
+		<script type = "text/problemStatment">
+			Display number of times the button is clicked in the div
+		</script>
+
+		<script>
+			(function()
+			{
+				function init()
+				{
+					var divMessage = document.getElementById("divMessage")
+					var btnTrack = document.getElementById("btnTrack")
+					
+					btnTrack.addEventListener("click", display)
+				}
+				
+				var count = 0
+				function display()
+				{
+					count += 1
+					//count retains its value though, variables are function scoped due to closure
+					divMessage.innerHTML = count
+				}
+				
+				window.addEventListener("DOMContentLoaded", init)
+			}) ()
+			
+			//myApp()
+			//function is created invoked and destroyed immediately
+		</script>
+
+	</head>
+	<body>
+		<!--Method 1<input type = "button" value = "track" id = "btnTrack" onclick = "display()">
+			Can influence the behavior of input tag by setting onclick to null-->
+			
+		<script type = "text/Solve">
+			1. you should not be able to change onclick 
+			2. not call function from outside
+			3. not access count from console
+		</script>
+		
+		<input type = "button" value = "Track" id = "btnTrack">
+		<div id = "divMessage">[Display Click Counts]</div>
+		<script>
+		/* Method 1
+			var divMessage = document.getElementById("divMessage")
+			var count = 0
+			
+			function display()
+			{
+				count ++
+				divMessage.innerHTML = count
+			}
+		*/
+		</script>
+	</body>
+</html>

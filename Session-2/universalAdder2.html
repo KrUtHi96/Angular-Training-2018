@@ -1,0 +1,59 @@
+<html>
+	<head>
+		<script type = "text/Readme">
+		1. Use Recursion in adder function.
+
+		</script>
+		<script>
+			
+			function adder(x, y)
+			{
+				function parseArg(n)
+				{
+					if (typeof n === 'function') return parseArg(n())
+					
+					if (Array.isArray(n)) return adder.apply(this, n)
+					/*{
+						var result = 0
+						for (var j = 0; j < n.length; j++)
+							result += parseArg(n[j])
+							
+						return result
+					}*/
+					
+					return isNaN(n) ? 0 : parseInt(n, 10)
+				}
+				
+				return arguments.length <= 1 ? parseArg(arguments[0]) : parseArg(arguments[0]) + adder([].slice.call(arguments, 1))
+			}
+			
+			console.log(adder(10, 20))
+			
+			console.log(adder("100", "20"))
+			
+			console.log(adder("100", "abc"))
+			
+			var f = function() {return 10}
+			console.log(adder(f, f))
+			
+			var g = function() {return "20"}
+			console.log(adder(g, g))
+			
+			var h = function() {return g()}
+			console.log(adder(h, h))
+			
+			console.log(adder(10))
+			
+			console.log(adder())
+			
+			console.log(adder([10,20,30]))
+			
+			console.log(adder(10, 20, 30, 40))
+			
+			console.log(adder([[10, 20],1],[2,[30]]))
+			
+			
+			
+		</script>
+	</head>
+</html>
