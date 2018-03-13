@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+	
+		<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
+		</script>
+		
+		<script>
+			var app = angular.module("myApp", [])
+			
+			app.controller
+			(
+				"myCtrl",
+				function($scope)
+				{
+					$scope.employees = 
+						[
+							{id:1, name:"A"},
+							{id:2, name:"B"},
+							{id:3, name:"C"}
+						]
+				}
+			)
+		</script>
+		
+			
+	</head>
+	
+	<body>
+		
+		<div ng-app = "myApp" ng-controller = "myCtrl">
+			<h2> Employees in My Company </h2>
+			
+			<ul>
+				<li ng-repeat = "employee in employees">{{employee.name + " has id " + employee.id }}</li>
+			</ul>
+		</div>
+				
+	</body>
+</html>

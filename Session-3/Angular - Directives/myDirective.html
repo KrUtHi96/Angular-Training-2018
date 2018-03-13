@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+	
+		<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
+		</script>
+	
+		<script>
+			var app = angular.module("myApp", [])
+			
+			app.directive
+			(
+				"myTestDirective",
+				function ()
+				{
+					return {
+						restrict : "EACM",
+						replace : true,
+						template : "<h4> Welcome to My Directive</h4>"
+					}
+				}
+			)
+		</script>
+			
+	</head>
+	
+	<body>
+		
+		<div ng-app = "myApp">
+			<div> 
+			<my-test-directive></my-test-directive>
+			</div>
+			
+			<div my-test-directive>
+			</div>
+			
+			<div class = "my-test-directive">
+			</div>
+			
+			<div>
+			<!-- directive: my-test-directive -->
+			</div>
+			
+		</div>
+				
+	</body>
+</html>
