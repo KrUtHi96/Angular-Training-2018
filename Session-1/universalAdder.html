@@ -1,0 +1,76 @@
+<html>
+	<head>
+		<script type = "text/test-cases">
+		Adder should be able to
+			1.  Add two numbers
+			2.  Add two numbers passed as strings
+			3.  non-numeric string as zero
+			4.  Should be able to add functions returning numbers
+			5.  Should be able to add functions returning numbers in string
+			6.  Should be able to add functions returning functions returning numbers in string
+			7.  Should be able to add only one number
+			8.  Return zero on no arguments
+			9.  Add an array of numbers
+			10. Add varying number of arguments
+			11. Add nested array of numbers
+			12. Add two functions returning array of numbers in string format
+			13. Add array of functions returning array of numbers in string format
+		</script>
+		<script>
+			
+			function adder(x, y)
+			{
+				function parseArg(n)
+				{
+					if (typeof n === 'function') return parseArg(n())
+					
+					if (Array.isArray(n)) return adder.apply(this, n)
+					/*{
+						var result = 0
+						for (var j = 0; j < n.length; j++)
+							result += parseArg(n[j])
+							
+						return result
+					}*/
+					
+					return isNaN(n) ? 0 : parseInt(n, 10)
+				}
+				
+				var result = 0
+				
+				for (var i = 0; i < arguments.length; i++)
+					result += parseArg(arguments[i]);
+				
+				return result
+			}
+			
+			console.log(adder(10, 20))
+			
+			console.log(adder("100", "20"))
+			
+			console.log(adder("100", "abc"))
+			
+			var f = function() {return 10}
+			console.log(adder(f, f))
+			
+			var g = function() {return "20"}
+			console.log(adder(g, g))
+			
+			var h = function() {return g()}
+			console.log(adder(h, h))
+			
+			console.log(adder(10))
+			
+			console.log(adder())
+			
+			console.log(adder([10,20,30]))
+			
+			console.log(adder(10, 20, 30, 40))
+			
+			console.log(adder([[10, 20],1],[2,[30]]))
+			
+			
+			
+		</script>
+	</head>
+</html>

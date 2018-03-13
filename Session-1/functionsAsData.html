@@ -1,0 +1,72 @@
+<html>
+	<head>
+		<script type = "text/Readme">
+		1. Functions can be created using expressions
+		2. Functions can be created with "new" keyword
+		3. Functions can have attributes and functions
+		   just like data objects
+		4. We can pass functions as arguments
+		5. We can return fucntions as a from functions
+			- fix one argument and interact with the object
+		
+		</script>
+		<script>
+		
+			var dataObj1 = { name:"xyz", salary:10000 }
+			console.log(typeof(dataObj1))
+			
+			var dataObj2 = new Object()
+			console.log(typeof(dataObj2))
+			
+			var fn1 = function() { console.log("fn1 is invoked") }
+			
+			//creates anonymous function fn2.toString()
+			var fn2 = new Function( console.log("fn2 is invoked") )
+			
+			
+			fn1()
+			fn2()
+			
+			var obj = {}
+			obj.id = 100
+			obj.display = function(){console.log("Object Id " + obj.id) }
+			obj.display()
+			
+			var fn = function(){}
+			fn.id = 200
+			fn.display = function() {console.log("Function Id " + fn.id) }
+			fn.display()
+			
+			function call(fn, a, b)
+			{
+				return fn(a, b)
+			}
+			
+			function adderfn(a, b)
+			{
+				return a + b
+			}
+			console.log(call(adderfn, 10, 20))
+			
+			function return_adder()
+			{
+				return function(a, b) { return a + b }
+			}
+			adderfn2 = return_adder()
+			console.log(adderfn2(3, 5))
+			
+			function getAdderFor(x)
+			{
+				return function(y)
+				{
+					return x + y
+				}
+			}
+			
+			add_10 = getAdderFor(10)
+			console.log(add_10(100))
+			console.log(add_10(10))
+						
+		</script>
+	</head>
+</html>
