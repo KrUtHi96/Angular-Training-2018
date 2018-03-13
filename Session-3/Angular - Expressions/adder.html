@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
+		</script>
+	</head>
+	
+	<body>
+	
+	<div ng-app = "" ng-init = "myCol = 'lightblue'; f = 'Kruthi'; l = 'Hunsur'; emp = {salary:1000}; A = [1,2,3]"> 
+	<!-- note what happens if there is no ng-app -->
+	
+		<p ng-bind = "3 + 3"></p>
+		
+		<p> {{ 100 + 200 }} </p>
+		
+		<input type = "text" style = "background-color:{{myCol}}" ng-model = "myCol" value = "{{myCol}}"/>
+		
+		<p>My name is {{f + " " + l}}</p>
+		
+		<p ng-bind = "{{emp.salary}}"></p>
+		
+		<p>First Element in the Array {{ A[0] }}</p>
+		
+	</div>
+	
+	</body>
+</html>
