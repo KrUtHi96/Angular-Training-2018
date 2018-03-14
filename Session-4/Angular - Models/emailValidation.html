@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+	
+		<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
+		</script>
+				
+	</head>
+	
+	<body>
+	
+		<form ng-app = "" name = "myForm">
+			Email: <input type = "email" name = "myEmail" ng-model = "userEmail" />
+			<span ng-show = "myForm.myEmail.$error.email">Invalid!</span>
+		</form>
+	
+				
+	</body>
+</html>

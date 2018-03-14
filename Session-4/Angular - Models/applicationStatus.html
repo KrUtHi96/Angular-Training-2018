@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+	
+		<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
+		</script>
+				
+	</head>
+	
+	<body>
+		<form ng-app = "" name = "myForm" ng-init = "userEmail = 'abc@xyz.com'">
+			<p> Enter Email Address: <input type = "email" name = "myEmail" ng-model = "userEmail" /></p>
+
+			<span ng-hide = "myForm.myEmail.$valid"> <h3 style = "color:red"> Invalid </h3> </span>
+			<span ng-show = "myForm.myEmail.$dirty"> <h3 style = "color:green"> Changed </h3> </span>
+			<span ng-show = "myForm.myEmail.$touched"> <h3 style = "color:yellow"> Input had beein in focus </h3> </span>
+		</form>
+	</body>
+</html>
