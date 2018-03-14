@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+	
+		<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
+		</script>
+		
+		<script>
+			var app = angular.module("app", [])
+			
+			app.controller
+			(
+				"ctrl",
+				function ($scope)
+				{
+					$scope.displayMsg = "Good Day!"
+					
+					$scope.changeMsg =  function() 
+										{
+											$scope.displayMsg = "Happy Birthday!"
+										}
+				}
+			)
+		</script>
+				
+	</head>
+	
+	<body>
+	
+		<div ng-app = "app" ng-controller = "ctrl" ng-click = "changeMsg()">
+			<h2> {{displayMsg}} </h2>
+		</div>
+		
+	</body>
+</html>
