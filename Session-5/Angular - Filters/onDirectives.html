@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+	
+		<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
+		</script>
+		<script>
+			var app = angular.module("myApp", [])
+			
+			app.controller
+			(
+				"myCtrl",
+				function ($scope)
+				{
+					$scope.names = [
+					{name:'Jani',country:'Norway'},
+					{name:'Carl',country:'Sweden'},
+					{name:'Margareth',country:'England'},
+					{name:'Hege',country:'Norway'},
+					{name:'Joe',country:'Denmark'},
+					{name:'Gustav',country:'Sweden'},
+					{name:'Birgit',country:'Denmark'},
+					{name:'Mary',country:'England'},
+					{name:'Kai',country:'Norway'}
+					]
+				}				
+			)
+		</script>
+		
+	</head>
+	
+	<body>
+	
+		<div ng-app = "myApp" ng-controller = "myCtrl">
+			Order By name or country?<input type = "text" ng-model = "type" />
+			<ol>
+				<li ng-repeat = "x in names |orderBy:type">{{x.name + ' , ' + x.country}}</li>
+			</ol>
+			
+		</div>	
+	</body>
+</html>
