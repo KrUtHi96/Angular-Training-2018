@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+	
+		<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
+		</script>
+		
+		<script>
+		
+			var app = angular.module("myApp", [])
+			
+			app.run
+			(
+				function ($rootScope)
+				{
+					$rootScope.myColor = "red"
+				}
+			)
+			
+			app.controller
+			(
+				"myCtrl",
+				function ($scope)
+				{
+					$scope.myColor = "green"
+				}
+			)
+
+		</script>		
+	</head>
+	
+	<body ng-app = "myApp">
+	
+	<p> <h2 style = "color:{{myColor}}">Before : Color in root scope </h2> </p>
+	
+	<div ng-controller = "myCtrl">
+	<p style = "color:{{myColor}}"> Color in current scope </p>
+	</div>
+	
+	<p> <h2 style = "color:{{myColor}}">After : Color in root scope </h2> </p>
+	
+	</body>
+</html>
