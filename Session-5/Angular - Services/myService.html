@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+	
+		<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
+		</script>
+		
+		<script>
+			var app = angular.module("myApp", [])
+			
+			app.controller
+			(
+				"myCtrl",
+				function($scope, hexafy)
+				{
+					$scope.userNumber = 255
+					$scope.hex = hexafy.myFunc(parseInt($scope.userNumber))
+					
+				}
+			)
+			
+			app.service
+			(
+				'hexafy',
+				function()
+				{
+					this.myFunc = function(x) {return x.toString(16)}
+				}
+			)
+		
+		</script>
+		
+	</head>
+	
+	<body>
+		<div ng-app = "myApp" ng-controller = "myCtrl">
+			<input type = "text" ng-model = "userNumber" /><hr>
+			<h2 style = "color:green">{{userNumber}} In Hex: {{hex}}</h2>
+		</div>	
+	</body>
+</html>
