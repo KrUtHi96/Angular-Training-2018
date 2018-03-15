@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+	
+		<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
+		</script>
+			
+		<script>
+			var app = angular.module("myApp", [])
+			
+			app.controller
+			(
+				"myCtrl",
+				function($scope)
+				{
+					$scope.states = 
+						[
+							{name:'Karnataka', capital:'Bangalore'},
+							{name:'Kerala', capital:'Thiruvanantapuram'},
+							{name:'Tamil Nadu', capital:'Chennai'},
+							{name:'Rajasthan', capital:'Jaipur'},
+							{name:'Maharashtra', capital:'Mumbai'},
+						]
+				}
+			)		
+		</script>
+		
+	</head>
+	
+	<body>
+		<div ng-app = "myApp" ng-controller = "myCtrl">
+			<select ng-options = "x.name for x in states" ng-model = "selectedState"></select>
+			
+			<p>{{selectedState.name}}</p>
+			<p>{{selectedState.capital}}</p>
+		</div>
+	</body>
+</html>
