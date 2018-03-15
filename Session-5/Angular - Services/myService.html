@@ -18,6 +18,10 @@
 					$scope.userNumber = 255
 					$scope.hex = hexafy.myFunc(parseInt($scope.userNumber))
 					
+					$scope.convert = function(userNumber)
+									 {
+										$scope.hex = hexafy.myFunc(parseInt(userNumber))
+									 }					
 				}
 			)
 			
@@ -36,7 +40,7 @@
 	
 	<body>
 		<div ng-app = "myApp" ng-controller = "myCtrl">
-			<input type = "text" ng-model = "userNumber" /><hr>
+			<input type = "text" ng-model = "userNumber" ng-change = "convert(userNumber)" /><hr>
 			<h2 style = "color:green">{{userNumber}} In Hex: {{hex}}</h2>
 		</div>	
 	</body>
