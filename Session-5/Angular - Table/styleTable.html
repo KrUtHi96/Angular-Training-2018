@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+	
+		<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
+		</script>
+			
+		<script>
+			var app = angular.module("myApp", [])
+			
+			app.controller
+			(
+				"myCtrl",
+				function($scope)
+				{
+					$scope.states = 
+						[
+							{name:'Karnataka', capital:'Bangalore'},
+							{name:'Kerala', capital:'Thiruvanantapuram'},
+							{name:'Tamil Nadu', capital:'Chennai'},
+							{name:'Rajasthan', capital:'Jaipur'},
+							{name:'Maharashtra', capital:'Mumbai'},
+						]
+				}
+			)		
+		</script>
+		
+	</head>
+	
+	<body>
+		<div ng-app = "myApp" ng-controller = "myCtrl">
+			<table border = "2" width = "100%" >
+				<tr>
+					<th>State</th>
+					<th>Capital</th>
+				</tr>
+				<tr ng-repeat = "x in states | orderBy:'name'">
+					<td ng-if = "$odd" style = "text-align:center;background-color:lightblue">{{x.name}}</td>
+					<td ng-if = "$even" style = "text-align:center;background-color:lightyellow">{{x.name}}</td>
+					<td ng-if = "$odd" style = "text-align:center;background-color:lightblue">{{x.capital | uppercase}}</td>
+					<td ng-if = "$even" style = "text-align:center;background-color:lightyellow">{{x.capital | uppercase}}</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>
