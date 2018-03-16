@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+	
+		<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
+		</script>
+			
+		<script>
+			var app = angular.module("myApp", [])
+			
+			app.controller
+			(
+				"myCtrl",
+				function ($scope)
+				{
+					$scope.x1 = "KrUtHi"
+					$scope.x2 = angular.uppercase($scope.x1)
+					$scope.x3 = angular.lowercase($scope.x1)
+					$scope.x4 = angular.isString($scope.x1)
+					$scope.x5 = angular.isNumber($scope.x1)					
+				}
+			)
+		
+		</script>
+	</head>
+	
+	<body>
+		<div ng-app = "myApp" ng-controller = "myCtrl">
+			<p> {{x1}} </p>
+			<p> Uppercase : {{x2}} </p>
+			<p> Lowercase : {{x3}} </p>
+			<p> isNumber? : {{x5}} </p>
+			<p> isString? : {{x4}} </p>
+		</div>		
+	</body>
+</html>
