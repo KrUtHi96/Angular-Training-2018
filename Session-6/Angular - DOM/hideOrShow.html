@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>	
+		<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
+		</script>
+		
+		<script>
+			var app = angular.module("myApp", [])
+			
+			app.controller
+			(
+				"myCtrl",
+				function($scope)
+				{
+					$scope.show = true
+				}
+			)
+		</script>
+	</head>
+
+	<body>
+		<div ng-app = "myApp" ng-controller = "myCtrl">
+			<h3 ng-show = "show" style = "color:red">I am visible</h3>
+			<h3 ng-show = "!show"style = "color:green">I am visible</h3>
+			
+			Toggle <input type = "checkbox" ng-model = "show"/>
+		</div>
+	</body>
+</html>

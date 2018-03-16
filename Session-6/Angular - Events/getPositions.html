@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>	
+		<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
+		</script>
+		
+		<script>
+		var app =angular.module("myApp", [])
+		
+		app.controller
+		(
+			"myCtrl",
+			function ($scope)
+			{
+				$scope.x = 0
+				$scope.y = 0
+				$scope.text = ''
+				$scope.getPosition = function(event)
+									 {
+										$scope.x = event.clientX
+										$scope.y = event.clientY
+										
+										$scope.text += '(' + $scope.x + ' , ' + $scope.y + ')' + '\n'
+									 }
+			}
+		)
+		</script>
+	</head>
+
+	<body>
+	<div ng-app = "myApp" ng-controller = "myCtrl">
+		<h1 ng-mouseover = "getPosition($event)">Mouse Over Me! </h1>
+		<div>{{text}}</div>
+	</div>
+	</body>
+</html>

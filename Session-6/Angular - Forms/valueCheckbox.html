@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>	
+		<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
+		</script>
+		
+		<script>
+			var app = angular.module("myApp", [])
+			
+			app.controller
+			(
+				"myCtrl",
+				function ($scope)
+				{
+					$scope.check = true
+				}
+			)
+		</script>
+	</head>
+
+	<body>
+		<div ng-app = "myApp" ng-controller = "myCtrl">
+			<form>
+				<input type = "checkbox" ng-model = "check" />
+			</form>
+			<h1> Value of variable <span style = "color:green">{{check}}</span> </h1>
+		</div>	
+	</body>
+</html>

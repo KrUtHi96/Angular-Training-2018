@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>	
+		<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
+		</script>
+		
+		<script>
+			var app = angular.module("myApp", [])
+			
+			app.controller
+			(
+				"myCtrl",
+				function($scope)
+				{
+					$scope.count = 0
+				}
+			)
+		</script>
+	</head>
+
+	<body>
+		<div ng-app = "myApp" ng-controller = "myCtrl">
+			<h1 ng-mouseover = "count = count + 1" style = "color:red">Mouse Over Me</h1>
+			<h3 style = "color:green">{{count}}</h3>
+		</div>
+	</body>
+</html>

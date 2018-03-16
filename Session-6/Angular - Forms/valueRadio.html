@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>	
+		<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
+		</script>
+		
+		<script>
+		var app = angular.module("myApp", [])
+		
+		app.controller
+		(
+			"myCtrl",
+			function ($scope)
+			{
+				$scope.selectedTopic = ''
+			}
+		)
+			
+		</script>
+	</head>
+
+	<body>
+		<div ng-app = "myApp" ng-controller = "myCtrl">
+			<form>
+			Pick a topic:
+			<input type = "radio" ng-model = "selectedTopic" value = "dog" />Dogs
+			<input type = "radio" ng-model = "selectedTopic" value = "tutorial" />Tutorials
+			<input type = "radio" ng-model = "selectedTopic" value = "car" />Cars
+			</form>
+			<h1>You have selected : {{selectedTopic}}</h1>
+		</div>
+	</body>
+</html>
